@@ -61,5 +61,4 @@ public/
 
 ## 👩‍💻 Autoras
 
-Marta Chacartegui
-Francheska Contreras
+Marta Chacartegui y Francheska Contreras

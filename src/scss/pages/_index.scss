@@ -2,3 +2,310 @@
   padding-left: 2rem;
   padding-bottom: 20px;
 }
+
+/* === Sección Hero === */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  background-image: url('../images/asador-fachada.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--color-white);
+  padding: var(--space-md);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: var(--space-lg);
+}
+
+/* === Sección Quiénes Somos === */
+.section-about {
+  padding: var(--space-xxl) 0;
+  background-color: var(--color-white);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+/* Imagen */
+.about-image {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-charcoal);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.9;
+}
+
+.years-badge {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: var(--color-ember);
+  color: var(--color-white);
+  padding: var(--space-lg);
+  text-align: center;
+  box-shadow: var(--shadow-strong);
+}
+
+.years-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.years-text {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+}
+
+/* Contenido de texto */
+.about-text {
+  padding: var(--space-md);
+}
+
+.about-text .section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ember);
+  margin-bottom: var(--space-sm);
+}
+
+.about-text .section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-lg);
+  line-height: 1.2;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: var(--color-smoke);
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
+}
+
+.about-text p strong {
+  color: var(--color-ember);
+  font-weight: 500;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.feature-item {
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.feature-item h3 {
+  color: var(--color-charcoal);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .years-badge {
+    bottom: 20px;
+    right: 20px;
+    padding: var(--space-md);
+  }
+  
+  .years-number {
+    font-size: 3rem;
+  }
+  
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Sección Eventos === */
+.section-events {
+  padding: var(--space-xxl) 0;
+  background-color: var(--color-cream);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.event-card {
+  background: var(--color-white);
+  padding: var(--space-lg);
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-medium);
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.event-card h3 {
+  color: var(--color-ember);
+  margin-bottom: var(--space-md);
+  font-size: 1.5rem;
+}
+
+.event-card p {
+  color: var(--color-smoke);
+  line-height: 1.7;
+}
+
+/* === Sección Menú === */
+.section-menu {
+  padding: var(--space-xxl) 0;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.menu-content {
+  margin-top: var(--space-lg);
+}
+
+.menu-content p {
+  font-size: 1.1rem;
+  color: var(--color-smoke);
+  margin-bottom: var(--space-lg);
+}
+
+/* === Sección Contacto === */
+.section-contact {
+  padding: var(--space-xxl) 0;
+  background-color: var(--color-cream);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+.contact-item {
+  margin-bottom: var(--space-lg);
+}
+
+.contact-item h3 {
+  color: var(--color-ember);
+  margin-bottom: var(--space-sm);
+  font-size: 1.3rem;
+}
+
+.contact-item p {
+  color: var(--color-smoke);
+  line-height: 1.7;
+}
+
+.contact-item a {
+  color: var(--color-ember);
+  transition: color var(--transition-fast);
+}
+
+.contact-item a:hover {
+  color: var(--color-ember-light);
+}
+
+.contact-form {
+  background: var(--color-white);
+  padding: var(--space-lg);
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-form h3 {
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-md);
+}
+
+.contact-form p {
+  color: var(--color-smoke);
+  margin-bottom: var(--space-sm);
+}
+
+/* === Responsive === */
+@media (min-width: 768px) {
+  .about-content {
+    grid-template-columns: 2fr 1fr;
+  }
+}

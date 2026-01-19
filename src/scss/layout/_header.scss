@@ -1,10 +1,11 @@
 .navbar {
   position: fixed;
-  top: 38px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--color-cream);
+  background: rgba(245, 240, 232, 0.7);
+  backdrop-filter: blur(10px);
   padding: 0;
   transition: all var(--transition-medium);
   box-shadow: 0 2px 20px rgba(26, 23, 20, 0.08);
@@ -75,15 +76,19 @@
   height: 3px;
   background: var(--color-ember);
   transition: width var(--transition-medium);
+  z-index: 1;
 }
 
 .nav-menu a:hover {
   color: var(--color-ember);
 }
 
-.nav-menu a:hover::before,
+.nav-menu a:hover::before {
+  width: 80%;
+}
+
 .nav-menu a.active::before {
-  width: 100%;
+  width: 80%;
 }
 
 .nav-toggle {

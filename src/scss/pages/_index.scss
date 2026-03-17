@@ -7,15 +7,39 @@
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 600px;
+  min-height: 640px;
   background-image: url('../images/asador-fachada.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 220px;
+    background: linear-gradient(to bottom,
+        rgba(26, 23, 20, 0) 0%,
+        rgba(26, 23, 20, 0.18) 42%,
+        rgba(26, 23, 20, 0.42) 74%,
+        rgba(26, 23, 20, 0.72) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 12% 18%, rgba(212, 168, 83, 0.2) 0%, rgba(212, 168, 83, 0) 42%);
+    z-index: 1;
+    pointer-events: none;
+  }
 }
 
 .hero-overlay {
@@ -24,173 +48,354 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(135deg,
+      rgba(10, 10, 10, 0.1) 0%,
+      rgba(12, 12, 12, 0.24) 45%,
+      rgba(8, 8, 8, 0.46) 100%);
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   text-align: center;
   color: var(--color-white);
-  padding: var(--space-md);
+  max-width: 860px;
+  padding: var(--space-lg) clamp(1.25rem, 3.2vw, 2.6rem) var(--space-xxl);
+  border: none;
+  background: linear-gradient(180deg, rgba(26, 23, 20, 0.24) 0%, rgba(26, 23, 20, 0.48) 100%);
+  backdrop-filter: blur(2px);
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  margin-bottom: var(--space-sm);
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(3.1rem, 7vw, 5.9rem);
   font-weight: 700;
   margin-bottom: var(--space-sm);
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.58);
   letter-spacing: -0.02em;
+  line-height: 1.05;
 }
 
 .hero-subtitle {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.02rem, 1.6vw, 1.45rem);
   font-weight: 400;
-  letter-spacing: 0.15em;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.02em;
+  color: rgba(245, 240, 232, 0.92);
+  max-width: 58ch;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   margin-bottom: var(--space-lg);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-hero-outline {
+  background: transparent;
+  color: var(--color-cream);
+  border: 1px solid rgba(245, 240, 232, 0.7);
+}
+
+.btn-hero-outline:hover {
+  background: rgba(245, 240, 232, 0.14);
+  color: var(--color-white);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 520px;
+    justify-content: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: var(--space-md) var(--space-md) var(--space-xl);
+    background: linear-gradient(180deg, rgba(26, 23, 20, 0.24) 0%, rgba(26, 23, 20, 0.44) 100%);
+    border: none;
+  }
+
+  .hero-subtitle {
+    max-width: none;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+/* === Sección Nuestra Historia === */
+.section-history {
+  background: linear-gradient(180deg, #11100e 0%, #171410 100%);
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xl);
+}
+
+.history-header {
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto var(--space-xxl);
+}
+
+.history-kicker {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(245, 240, 232, 0.72);
+  margin-bottom: var(--space-sm);
+}
+
+.history-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  font-weight: 700;
+  color: var(--color-cream);
+  margin-bottom: var(--space-sm);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.history-text {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.7vw, 1.65rem);
+  color: rgba(245, 240, 232, 0.66);
+  line-height: 1.5;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.history-gallery {
+  display: grid;
+  grid-template-columns: 1.6fr 0.78fr 0.78fr;
+  gap: clamp(0.7rem, 1.5vw, 1.2rem);
+  align-items: stretch;
+  width: min(1320px, 100% - (var(--space-md) * 2));
+  margin: 0 auto;
+}
+
+.history-gallery__item {
+  position: relative;
+  overflow: hidden;
+  background-color: #121212;
+  aspect-ratio: 4 / 5;
+}
+
+.history-gallery__item--large {
+  aspect-ratio: 6 / 4;
+}
+
+.history-gallery__item:nth-child(3) {
+  margin-left: clamp(0.4rem, 1vw, 0.85rem);
+}
+
+.history-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.history-gallery__item:hover img {
+  transform: scale(1.04);
+}
+
+/* Responsive: tablet */
+@media (max-width: 1024px) {
+  .section-history {
+    padding-top: var(--space-xl);
+  }
+
+  .history-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .history-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .history-gallery__item--large {
+    grid-column: span 2;
+    aspect-ratio: 16 / 10;
+  }
+
+  .history-gallery__item:nth-child(3) {
+    margin-left: 0;
+  }
+
+  .history-title {
+    font-size: clamp(2.6rem, 6vw, 4rem);
+  }
+}
+
+/* Responsive: mobile */
+@media (max-width: 768px) {
+  .history-gallery {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    padding: 0;
+  }
+
+  .history-gallery__item,
+  .history-gallery__item--large {
+    aspect-ratio: 5 / 6;
+  }
+
+  .history-gallery__item:nth-child(3) {
+    margin-left: 0;
+  }
+
+  .history-title {
+    font-size: clamp(2.1rem, 9vw, 2.9rem);
+  }
+
+  .history-header {
+    max-width: 100%;
+    margin-bottom: var(--space-lg);
+  }
+
+  .history-text {
+    font-size: 1.04rem;
+  }
 }
 
 /* === Sección Quiénes Somos === */
 .section-about {
-  padding: var(--space-xxl) 0;
-  background-color: var(--color-white);
+  background-color: var(--color-charcoal);
+  padding-top: var(--space-xxl);
 }
 
-.about-layout {
+/* Bloque intro: título izquierda + texto derecha */
+.about-intro {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
   align-items: center;
+  padding-bottom: var(--space-xxl);
 }
 
-/* Imagen */
-.about-image {
-  position: relative;
-}
-
-.image-container {
-  position: relative;
-  width: 100%;
-  background-color: var(--color-charcoal);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0.9;
-}
-
-.years-badge {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  background: var(--color-ember);
-  color: var(--color-white);
-  padding: var(--space-lg);
-  text-align: center;
-  box-shadow: var(--shadow-strong);
-}
-
-.years-number {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: var(--space-xs);
-}
-
-.years-text {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.3;
-}
-
-/* Contenido de texto */
-.about-text {
-  padding: var(--space-md);
-}
-
-.about-text .section-label {
+.about-intro__title .section-label {
   display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-ember);
-  margin-bottom: var(--space-sm);
-}
-
-.about-text .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--color-charcoal);
-  margin-bottom: var(--space-lg);
-  line-height: 1.2;
-}
-
-.about-text p {
-  font-size: 1rem;
-  color: var(--color-smoke);
   margin-bottom: var(--space-md);
-  line-height: 1.8;
 }
 
-.about-text p strong {
-  color: var(--color-ember);
-  font-weight: 500;
+.about-heading {
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 7vw, 6.2rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
-.about-features {
+.about-intro__text {
+  max-width: 52ch;
+
+  p {
+    font-size: 1.2rem;
+    color: var(--color-cream-dark);
+    margin-bottom: var(--space-md);
+    line-height: 1.85;
+  }
+
+  p strong {
+    color: var(--color-ember);
+    font-weight: 500;
+  }
+}
+
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-sm);
+  padding: 0.72rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: var(--color-ember);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.about-cta:hover {
+  color: var(--color-white);
+  background: var(--color-ember-light);
+}
+
+/* Galería a ancho completo */
+.about-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-xl);
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.feature-item {
-  text-align: center;
-}
+.about-gallery__item {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
 
-.feature-icon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: var(--space-sm);
-}
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
 
-.feature-item h3 {
-  color: var(--color-charcoal);
-  font-size: 0.9rem;
-  font-weight: 600;
+  &:hover img {
+    transform: scale(1.04);
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .about-layout {
+  .about-intro {
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--space-md);
+    align-items: start;
   }
-  
-  .years-badge {
-    bottom: 20px;
-    right: 20px;
-    padding: var(--space-md);
+
+  .about-intro__title .section-label {
+    font-size: 0.8rem;
   }
-  
-  .years-number {
-    font-size: 3rem;
+
+  .about-heading {
+    font-size: clamp(2.6rem, 10vw, 4rem);
   }
-  
-  .about-features {
+
+  .about-intro__text p {
+    font-size: 1.05rem;
+  }
+
+  .about-gallery {
     grid-template-columns: 1fr;
   }
 }

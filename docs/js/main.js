@@ -1,2 +1,2 @@
-console.log(">> Ready :)");
+const e=document.querySelector(".navbar"),t=document.querySelector(".hero");if(e){const o=()=>{if(!t){e.classList.add("scrolled"),e.classList.remove("on-hero");return}const r=t.offsetTop+t.offsetHeight-e.offsetHeight,s=window.scrollY<r;e.classList.toggle("on-hero",s),e.classList.toggle("scrolled",!s)};o(),window.addEventListener("scroll",o,{passive:!0}),window.addEventListener("resize",o)}
 //# sourceMappingURL=main.js.map

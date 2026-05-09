@@ -12,8 +12,9 @@
   --color-white: #ffffff;
 
   /* Tipografías */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Josefin Sans', 'Helvetica Neue', sans-serif;
+  --font-main: 'Josefin Sans', 'Helvetica Neue', sans-serif;
+  --font-display: var(--font-main);
+  --font-body: var(--font-main);
 
   /* Espaciado */
   --space-xs: 0.5rem;

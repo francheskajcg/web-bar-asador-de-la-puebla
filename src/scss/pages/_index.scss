@@ -529,22 +529,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 110px;
-  padding: 0.65rem 1rem;
-  border: 1px solid rgba(245, 240, 232, 0.95);
-  color: var(--color-white);
-  background: rgba(255, 255, 255, 0.02);
-  font-size: 0.72rem;
+  width: fit-content;
+  padding: 0.72rem 1.3rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
-
-  &:hover {
-    background: rgba(245, 240, 232, 0.18);
-    color: var(--color-white);
-    border-color: rgba(245, 240, 232, 0.72);
-  }
 }
 
 /* Responsive */

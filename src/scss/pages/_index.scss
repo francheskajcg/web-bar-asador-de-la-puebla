@@ -52,24 +52,24 @@
   animation: riseIn 0.8s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
 }
 
-.events-page-hero__content > * {
+.events-page-hero__content>* {
   opacity: 0;
   animation: riseIn 0.8s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
 }
 
-.events-page-hero__content > *:nth-child(1) {
+.events-page-hero__content>*:nth-child(1) {
   animation-delay: 0.08s;
 }
 
-.events-page-hero__content > *:nth-child(2) {
+.events-page-hero__content>*:nth-child(2) {
   animation-delay: 0.16s;
 }
 
-.events-page-hero__content > *:nth-child(3) {
+.events-page-hero__content>*:nth-child(3) {
   animation-delay: 0.26s;
 }
 
-.events-page-hero__content > *:nth-child(4) {
+.events-page-hero__content>*:nth-child(4) {
   animation-delay: 0.36s;
 }
 
@@ -398,6 +398,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .events-page-hero__layout,
   .events-page-plan__grid,
   .events-page-cta__panel {
@@ -414,6 +415,7 @@
   .events-page-formats__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .events-page-cta__media img {
     min-height: 300px;
   }
@@ -457,12 +459,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .events-page,
   .events-page-hero,
   .events-page-hero__backdrop,
   .events-page-hero__layout,
   .events-page-hero__content,
-  .events-page-hero__content > *,
+  .events-page-hero__content>*,
   .events-page-format,
   .events-page-step,
   .events-page-cta__panel {
@@ -1664,28 +1667,28 @@
   padding-bottom: var(--space-lg);
 }
 
-.events-page-hero__content > * {
+.events-page-hero__content>* {
   opacity: 0;
   animation: riseIn 0.8s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
 }
 
-.events-page-hero__content > *:nth-child(1) {
+.events-page-hero__content>*:nth-child(1) {
   animation-delay: 0.08s;
 }
 
-.events-page-hero__content > *:nth-child(2) {
+.events-page-hero__content>*:nth-child(2) {
   animation-delay: 0.18s;
 }
 
-.events-page-hero__content > *:nth-child(3) {
+.events-page-hero__content>*:nth-child(3) {
   animation-delay: 0.28s;
 }
 
-.events-page-hero__content > *:nth-child(4) {
+.events-page-hero__content>*:nth-child(4) {
   animation-delay: 0.36s;
 }
 
-.events-page-hero__content > *:nth-child(5) {
+.events-page-hero__content>*:nth-child(5) {
   animation-delay: 0.46s;
 }
 
@@ -2128,6 +2131,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .events-page-intro__grid,
   .events-page-plan__grid,
   .events-page-cta__panel {
@@ -2286,7 +2290,7 @@
   .events-page,
   .events-page-hero,
   .events-page-hero__overlay,
-  .events-page-hero__content > *,
+  .events-page-hero__content>*,
   .events-page-intro__copy,
   .events-page-highlight,
   .events-page-format,

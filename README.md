@@ -39,7 +39,6 @@ Compila y despliega automáticamente a GitHub Pages
 ```
 src/
 ├── index.html          # Página principal
-├── more-info.html      # Página de información adicional
 ├── scss/               # Estilos SASS
 ├── js/                 # JavaScript
 └── partials/           # Componentes HTML reutilizables

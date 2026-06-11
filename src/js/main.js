@@ -39,6 +39,8 @@ if (navLinks.length) {
 
         if (path === 'more-info.html') {
             activeLink = navLinks.find((link) => link.getAttribute('href') === './more-info.html');
+        } else if (path === 'eventos.html') {
+            activeLink = navLinks.find((link) => link.getAttribute('href') === './eventos.html');
         } else if (path === 'index.html' || path === '') {
             if (currentHash) {
                 activeLink = navLinks.find((link) => link.getAttribute('href') === `./index.html${currentHash}`);

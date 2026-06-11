@@ -86,7 +86,7 @@
   background: var(--color-charcoal);
 }
 
-.nav-menu li:first-child a {
+.nav-menu a.is-active {
   color: var(--color-white);
   background: var(--color-charcoal);
 }
@@ -119,7 +119,7 @@
   background: rgba(255, 255, 255, 0.16);
 }
 
-.navbar.on-hero .nav-menu li:first-child a {
+.navbar.on-hero .nav-menu a.is-active {
   color: var(--color-white);
   background: rgba(255, 255, 255, 0.18);
 }
